@@ -1,0 +1,128 @@
+<div class="comments">
+
+    <h4 class="comments-count">{{ post.comments_set.all.count }} Comments</h4>
+    {% for comment in post.comments_set.all %}
+    {% if not comment.parent %}
+    <div id="comment-1" class="comment">
+        <div class="d-flex">
+            <div>
+                <h5><p>{{ comment.name }}</p> <a href="#" class="reply"
+                                                 data-comment-id="{{ comment.id }}"><i
+                        class="bi bi-reply-fill"></i>
+                    Reply</a></h5>
+                <time datetime="2020-01-01">{{ comment.date }}</time>
+                <p>
+                    {{ comment.body }}
+                </p>
+            </div>
+        </div>
+        <div class="reply-form" style="display: none;">
+
+            <h4>Leave a Reply</h4>
+            <p>Your email address will not be published. Required fields are marked * </p>
+            <form action="{% url 'add_comments' post.id %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <input type="hidden" name="parent" value="{{ comment.id }}">
+                    <div class="col-md-6 form-group">
+                        <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                                    <textarea name="body" class="form-control"
+                                              placeholder="Your Comment*"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+
+            </form>
+
+        </div>
+        {% if comment.replies.all %}
+        {% for reply in comment.replies.all %}
+        <div id="comment-reply-1" class="comment comment-reply">
+            <div class="d-flex">
+                <div>
+                    <h5><a href="">{{ reply.name }}</a> <a href="#" class="reply"><i
+                            class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">{{ reply.date }}</time>
+                    <p>
+                        {{ reply.body }}
+                    </p>
+                </div>
+            </div>
+            <div class="reply-form" style="display: none;">
+
+                <h4>Leave a Reply</h4>
+                <p>Your email address will not be published. Required fields are marked * </p>
+                <form action="{% url 'add_comments' post.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <input type="hidden" name="parent" value="{{ comment.id }}">
+                        <div class="col-md-6 form-group">
+                            <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                                    <textarea name="body" class="form-control"
+                                              placeholder="Your Comment*"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+
+                </form>
+
+            </div>
+        </div><!-- End comment reply #1-->
+        {% endfor %}
+        {% endif %}
+    </div><!-- End comment #2-->
+    {% endif %}
+    {% endfor %}
+    <div class="reply-form">
+
+        <h4>Leave a Reply</h4>
+        <p>Your email address will not be published. Required fields are marked * </p>
+        <form action="{% url 'add_comments' post.id %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <input type="hidden" name="parent_id" value="">
+                <div class="col-md-6 form-group">
+                    <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                </div>
+                <div class="col-md-6 form-group">
+                    <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                                    <textarea name="body" class="form-control"
+                                              placeholder="Your Comment*"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+
+        </form>
+
+    </div>
+
+</div><!-- End blog comments -->
+<script>
+    document.querySelectorAll('.reply').forEach(replyLink => {
+        replyLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const replyForm = this.closest('.comment').querySelector('.reply-form');
+            if (replyForm) {
+                replyForm.style.display = 'block';
+            }
+        });
+    });
+</script>

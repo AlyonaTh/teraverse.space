@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block title %}
+{% load static %}
+
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url({% static 'assets/img/breadcrumbs-bg.jpg' %});">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>About</h2>
+        <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>About</li>
+        </ol>
+
+    </div>
+</div><!-- End Breadcrumbs -->
+{% endblock title %}
+{% block content %}
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row position-relative">
+
+            <div class="col-lg-7 about-img" style="background-image: url({% static 'assets/img/about.jpg' %});"></div>
+
+            <div class="col-lg-7">
+                <h2>Join us on this journey</h2>
+                <div class="our-story">
+                    <h4>2024</h4>
+                    <h3>Our Story</h3>
+                    <p>TeraVerse emerged from a singular vision: to create a digital haven where passions converge, ideas flourish, and individuals find solace in shared experiences. Born from the fervent desire
+                        to illuminate the myriad facets of life's journey, TeraVerse began its odyssey as a humble digital abode. </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span>Multifaceted topics</span>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Human experience</span>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Inspiration and motivation</span></li>
+                    </ul>
+                    <p>Over time, it blossomed into a vibrant community, united by the common pursuit of knowledge, discovery, and self-expression. Through its evolution, TeraVerse has remained steadfast in its commitment
+                        to fostering a culture of curiosity, growth, and inclusivity. It stands as a testament to the transformative power of technology to connect, inspire, and empower individuals from all corners of the globe.</p>
+
+                    <div class="watch-video d-flex align-items-center position-relative">
+                        <i class="bi bi-play-circle"></i>
+                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch
+                            Video</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- End About Section -->
+
+<!-- ======= Stats Counter Section ======= -->
+<section id="stats-counter" class="stats-counter section-bg">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                    <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+                    <div>
+                        <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                    <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+                    <div>
+                        <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Projects</p>
+                    </div>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                    <i class="bi bi-headset color-green flex-shrink-0"></i>
+                    <div>
+                        <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Watched TV Shows</p>
+                    </div>
+                </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-item d-flex align-items-center w-100 h-100">
+                    <i class="bi bi-people color-pink flex-shrink-0"></i>
+                    <div>
+                        <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Followers</p>
+                    </div>
+                </div>
+            </div><!-- End Stats Item -->
+
+        </div>
+
+    </div>
+</section><!-- End Stats Counter Section -->
+
+<!-- ======= Alt Services Section ======= -->
+<section id="alt-services" class="alt-services">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+            <div class="col-lg-6 img-bg" style="background-image: url({% static 'assets/img/alt-services.jpg' %});" data-aos="zoom-in"
+                 data-aos-delay="100"></div>
+
+            <div class="col-lg-5 d-flex flex-column justify-content-center">
+                <h3>To inspire readers to new achievements in various spheres of life</h3>
+                <p>From thought-provoking articles and in-depth tutorials to captivating visuals and engaging discussions, TeraVerse is a treasure trove of knowledge, creativity, and inspiration waiting to be uncovered</p>
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-easel flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Educational value</a></h4>
+                        <p>Articles and lessons aim to expand knowledge and skills in various fields, helping readers grow and develop as individuals</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-patch-check flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Quality Content</a></h4>
+                        <p>All articles, reviews and lessons are compiled based on current trends and best practices in their respective fields</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-lightbulb flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Honesty and transparency</a></h4>
+                        <p>The author is willing to share his experience, mistakes and achievements, creating an atmosphere of mutual respect and support</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Variety of content</a></h4>
+                        <p>TeraVerse offers a wide range of topics including educational projects, interior design, programming, language learning and fashion</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Alt Services Section -->
+
+
+
+
+
+{% endblock content %}

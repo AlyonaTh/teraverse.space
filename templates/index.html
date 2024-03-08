@@ -1,0 +1,349 @@
+{% extends 'base.html' %}
+{% block title %}
+{% load static %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 data-aos="fade-down">Welcome to <span>TeraVerse</span></h2>
+                    <p data-aos="fade-up">Join us on this exhilarating journey through the realms of learning, creativity, and self-discovery. Welcome to TeraVerse – where the possibilities are as endless as the cosmos itself, and the spirit of exploration knows no bounds.</p>
+                    <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active"
+             style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %})"></div>
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %})"></div>
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %})"></div>
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-4.jpg' %})"></div>
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-5.jpg' %})"></div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+
+</section><!-- End Hero Section -->
+
+
+{% endblock title %}
+{% block content %}
+
+
+<!-- ======= Alt Services Section ======= -->
+<section id="get-started" class="alt-services">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+            <div class="col-lg-6 img-bg" style="background-image: url({% static 'assets/img/alt-services.jpg' %});" data-aos="zoom-in"
+                 data-aos-delay="100"></div>
+
+            <div class="col-lg-5 d-flex flex-column justify-content-center">
+                <h3>To inspire readers to new achievements</h3>
+                <p>From thought-provoking articles and in-depth tutorials to captivating visuals and engaging discussions, TeraVerse is a treasure trove of knowledge, creativity, and inspiration waiting to be uncovered</p>
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-easel flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Educational value</a></h4>
+                        <p>Articles and lessons aim to expand knowledge and skills in various fields, helping readers grow and develop as individuals</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-patch-check flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Quality Content</a></h4>
+                        <p>All articles, reviews and lessons are compiled based on current trends and best practices in their respective fields</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-lightbulb flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Honesty and transparency</a></h4>
+                        <p>The author is willing to share his experience, mistakes and achievements, creating an atmosphere of mutual respect and support</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                        <h4><a href="" class="stretched-link">Variety of content</a></h4>
+                        <p>TeraVerse offers a wide range of topics including educational projects, interior design, programming, language learning and fashion</p>
+                    </div>
+                </div><!-- End Icon Box -->
+
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Alt Services Section -->
+
+<!--&lt;!&ndash; ======= Features Section ======= &ndash;&gt;-->
+<!--<section id="features" class="features section-bg">-->
+<!--    <div class="container" data-aos="fade-up">-->
+
+<!--        <ul class="nav nav-tabs row  g-2 d-flex">-->
+
+<!--            <li class="nav-item col-3">-->
+<!--                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">-->
+<!--                    <h4>Modisit</h4>-->
+<!--                </a>-->
+<!--            </li>&lt;!&ndash; End tab nav item &ndash;&gt;-->
+
+<!--            <li class="nav-item col-3">-->
+<!--                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">-->
+<!--                    <h4>Praesenti</h4>-->
+<!--                </a>&lt;!&ndash; End tab nav item &ndash;&gt;-->
+
+<!--            <li class="nav-item col-3">-->
+<!--                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">-->
+<!--                    <h4>Explica</h4>-->
+<!--                </a>-->
+<!--            </li>&lt;!&ndash; End tab nav item &ndash;&gt;-->
+
+<!--            <li class="nav-item col-3">-->
+<!--                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">-->
+<!--                    <h4>Nostrum</h4>-->
+<!--                </a>-->
+<!--            </li>&lt;!&ndash; End tab nav item &ndash;&gt;-->
+
+<!--        </ul>-->
+
+<!--        <div class="tab-content">-->
+
+<!--            <div class="tab-pane active show" id="tab-1">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"-->
+<!--                         data-aos="fade-up" data-aos-delay="100">-->
+<!--                        <h3>Voluptatem dignissimos provident</h3>-->
+<!--                        <p class="fst-italic">-->
+<!--                            The allure of TeraVerse lies not only in its breadth of content but also in its unwavering commitment to excellence. Each article, post, or tutorial is meticulously crafted to inform, entertain, and inspire.-->
+<!--                        </p>-->
+<!--                        <ul>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate-->
+<!--                                velit.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda-->
+<!--                                mastiro dolore eu fugiat nulla pariatur.-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">-->
+<!--                        <img src="assets/img/features-1.jpg" alt="" class="img-fluid">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; End tab content item &ndash;&gt;-->
+
+<!--            <div class="tab-pane" id="tab-2">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">-->
+<!--                        <h3>Neque exercitationem debitis</h3>-->
+<!--                        <p class="fst-italic">-->
+<!--                            In an age defined by rapid change and boundless innovation, TeraVerse remains a steadfast beacon of relevance. Our dedication to staying abreast of emerging trends, technologies, and cultural shifts ensures that our content remains fresh, insightful, and aligned with the zeitgeist.-->
+<!--                        </p>-->
+<!--                        <ul>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate-->
+<!--                                velit.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Provident mollitia neque rerum asperiores dolores quos-->
+<!--                                qui a. Ipsum neque dolor voluptate nisi sed.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda-->
+<!--                                mastiro dolore eu fugiat nulla pariatur.-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6 order-1 order-lg-2 text-center">-->
+<!--                        <img src="assets/img/features-2.jpg" alt="" class="img-fluid">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; End tab content item &ndash;&gt;-->
+
+<!--            <div class="tab-pane" id="tab-3">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">-->
+<!--                        <h3>Voluptatibus commodi accusamu</h3>-->
+<!--                        <ul>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate-->
+<!--                                velit.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Provident mollitia neque rerum asperiores dolores quos-->
+<!--                                qui a. Ipsum neque dolor voluptate nisi sed.-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                        <p class="fst-italic">-->
+<!--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut-->
+<!--                            labore et dolore-->
+<!--                            magna aliqua.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6 order-1 order-lg-2 text-center">-->
+<!--                        <img src="assets/img/features-3.jpg" alt="" class="img-fluid">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; End tab content item &ndash;&gt;-->
+
+<!--            <div class="tab-pane" id="tab-4">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">-->
+<!--                        <h3>Omnis fugiat ea explicabo sunt</h3>-->
+<!--                        <p class="fst-italic">-->
+<!--                            As the world evolves, so too does TeraVerse, adapting and evolving to meet the ever-changing needs and interests of our diverse audience. With a finger on the pulse of the digital landscape, TeraVerse continues to push boundaries, challenge norms, and redefine what it means to be a digital destination in the 21st century.-->
+<!--                        </p>-->
+<!--                        <ul>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate-->
+<!--                                velit.-->
+<!--                            </li>-->
+<!--                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo-->
+<!--                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda-->
+<!--                                mastiro dolore eu fugiat nulla pariatur.-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6 order-1 order-lg-2 text-center">-->
+<!--                        <img src="assets/img/features-4.jpg" alt="" class="img-fluid">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; End tab content item &ndash;&gt;-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</section>&lt;!&ndash; End Features Section &ndash;&gt;-->
+
+<!-- ======= Our Shop Section ======= -->
+<section id="projects" class="projects">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>What Inspires Us</h2>
+            <p>All Links Provided are Affiliate Links</p>
+        </div>
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+             data-portfolio-sort="original-order">
+
+            <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                {% for categor in product_categories %}
+                <li data-filter=".filter-{{ categor.title }}">{{ categor.title }}</li>
+                {% endfor %}
+            </ul><!-- End Projects Filters -->
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                {% for product in product_list|slice:":6" %}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-{{product.category}}">
+                    <div class="portfolio-content h-100">
+                        <img src="{{ product.img.url }}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{ product.category }}</h4>
+                            <p>{{ product.description }}</p>
+                            <a href="{{ product.img.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            {% if product.img1 %}
+                            <a href="{{ product.img1.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in" style="display: none;"></i></a>
+                            {% endif %}
+                            {% if product.img2 %}
+                            <a href="{{ product.img2.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in" style="display: none;"></i></a>
+                            {% endif %}
+                            <a href="{{ product.link }}" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Projects Item -->
+                {% endfor %}
+
+
+            </div><!-- End Projects Container -->
+
+        </div>
+
+    </div>
+</section><!-- End Our Shop Section -->
+
+<!-- ======= Recent Blog Posts Section ======= -->
+<section id="recent-blog-posts" class="recent-blog-posts">
+    <div class="container" data-aos="fade-up">
+
+
+    <div class=" section-header">
+        <h2>Recent Blog Posts</h2>
+        <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
+    </div>
+
+    <div class="row gy-5">
+{% for recent_post in recent_posts %}
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="post-item position-relative h-100">
+
+                <div class="post-img position-relative overflow-hidden">
+                    <img src="{{ recent_post.img1.url }}" class="img-fluid" alt="">
+                    <span class="post-date">{{ recent_post.date|date:"F d" }}</span>
+                </div>
+
+                <div class="post-content d-flex flex-column">
+
+                    <h3 class="post-title">{{ recent_post.title }}</h3>
+
+                    <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person"></i> <span class="ps-2">{{ recent_post.author }}</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-folder2"></i> <span class="ps-2">{{ recent_post.category.title }}</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <a href="{{ recent_post.get_absolute_url }}" class="readmore stretched-link"><span>Read More</span><i
+                            class="bi bi-arrow-right"></i></a>
+
+                </div>
+
+            </div>
+        </div><!-- End post item -->
+
+{% endfor %}
+    </div>
+
+    </div>
+</section>
+<!-- End Recent Blog Posts Section -->
+
+{% endblock content %}

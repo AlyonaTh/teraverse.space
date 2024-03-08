@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block title %}
+{% load static %}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center"
+     style="background-image: url('{% static 'assets/img/breadcrumbs-bg.jpg' %}');">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Blog Details</h2>
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>{{ post.title }}</li>
+        </ol>
+
+    </div>
+</div><!-- End Breadcrumbs -->
+{% endblock title %}
+{% block content %}
+<!-- ======= Blog Details Section ======= -->
+<section id="blog" class="blog">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+
+            <div class="col-lg-8">
+
+                <article class="blog-details">
+
+                    <div class="post-img">
+                        <img src="{{ post.img1.url }}" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">{{ post.title }}</h2>
+
+                    <div class="meta-top">
+                        <ul>
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i>
+                                {{ post.author }}
+                            </li>
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                                <time datetime="2020-01-01">{{ post.date|date:"F d" }}</time>
+                            </li>
+                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>
+                                {{ post.comments_set.all.count }} Comments
+                            </li>
+                            <li class="d-flex align-items-center"><i class="bi bi-arrow-up-left-square"></i>All Links
+                                Provided are Affiliate Links
+                            </li>
+                        </ul>
+                    </div><!-- End meta top -->
+
+                    <div class="content">
+                        {{ post.description1 }}
+
+                        {% if post.description2 %}
+                        {{ post.description2 }}
+                        {% endif %}
+
+                        {% if post.description3 %}
+                        {{ post.description3 }}
+                        {% endif %}
+
+
+                    </div><!-- End post content -->
+
+                    <div class="meta-bottom">
+                        <i class="bi bi-folder"></i>
+                        <ul class="cats">
+                            <li><a href="{% url 'category' category_id=post.category.id %}">{{ post.category.title }}</a></li>
+                        </ul>
+
+
+
+                        <a href="{% url 'add_likes' post.id %}"><i class="bi bi-hand-thumbs-up"></i>Like {{ post.likes_set.all.count }}</a>
+
+                        <a href="{% url 'del_likes' post.id %}"><i class="bi bi-hand-thumbs-down"></i>Dislike</a>
+
+
+                    </div><!-- End meta bottom -->
+
+                </article><!-- End blog post -->
+
+                <div class="post-author d-flex align-items-center">
+                    <img src="{{ post.author_img.url }}" class="rounded-circle flex-shrink-0" alt="">
+                    <div>
+                        <h4>{{ post.author }}</h4>
+
+                        <p>
+                            {{ post.author_about }}
+                        </p>
+                    </div>
+                </div><!-- End post author -->
+
+                {% include 'blog/comments.html' %}
+
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="sidebar">
+
+                    <div class="sidebar-item search-form">
+                        <h3 class="sidebar-title">Search</h3>
+                        <form class="mt-3" method="get" action="{% url 'search' %}">
+                            <input type="text" name="query">
+                            {% csrf_token %}
+                            {{ search_form.as_p }}
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div><!-- End sidebar search formn-->
+
+                    <div class="sidebar-item categories">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul class="mt-3">
+                            {% for category in categories_with_counts %}
+                            <li><a href="{% url 'category' category_id=category.id %}">{{ category.title }}<span>{{ category.posts_count }}</span></a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div><!-- End sidebar categories-->
+
+                    <div class="sidebar-item recent-posts">
+                        <h3 class="sidebar-title">Recent Posts</h3>
+
+                        <div class="mt-3">
+                            {% for recent_post in recent_posts %}
+                            <div class="post-item mt-3">
+                                <img src="{{ recent_post.img1.url }}" alt="">
+                                <div>
+                                    <h4><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h4>
+                                    <time datetime="2020-01-01">{{ recent_post.date|date:"F d Y" }}</time>
+                                </div>
+                            </div><!-- End recent post item-->
+                            {% endfor %}
+
+                        </div>
+
+                    </div><!-- End sidebar recent posts-->
+
+
+                </div><!-- End Blog Sidebar -->
+
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Blog Details Section -->
+
+{% endblock content %}

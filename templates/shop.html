@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}
+{% load static %}
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url({% static 'assets/img/breadcrumbs-bg.jpg' %});">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Shop</h2>
+        <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Shop</li>
+        </ol>
+
+    </div>
+</div><!-- End Breadcrumbs -->
+{% endblock title %}
+{% block content %}
+<!-- ======= Our Shop Section ======= -->
+<section id="projects" class="projects">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>What Inspires Us</h2>
+            <p>All Links Provided are Affiliate Links</p>
+        </div>
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+             data-portfolio-sort="original-order">
+
+            <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                {% for category in categories %}
+                <li data-filter=".filter-{{ category.title }}">{{ category.title }}</li>
+                {% endfor %}
+            </ul><!-- End Projects Filters -->
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                {% for product in product_list %}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-{{product.category}}">
+                    <div class="portfolio-content h-100">
+                        <img src="{{ product.img.url }}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{ product.category }}</h4>
+                            <p>{{ product.description }}</p>
+                            <a href="{{ product.img.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            {% if product.img1 %}
+                            <a href="{{ product.img1.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in" style="display: none;"></i></a>
+                            {% endif %}
+                            {% if product.img2 %}
+                            <a href="{{ product.img2.url }}" title="{{ product.title }}"
+                               data-gallery="portfolio-gallery-{{ product.title }}" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in" style="display: none;"></i></a>
+                            {% endif %}
+                            <a href="{{ product.link }}" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Projects Item -->
+                {% endfor %}
+
+
+            </div><!-- End Projects Container -->
+
+        </div>
+
+    </div>
+</section><!-- End Our Shop Section -->
+
+{% endblock content %}
