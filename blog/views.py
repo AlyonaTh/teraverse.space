@@ -54,7 +54,7 @@ class AddComments(View):
             comment = form.save(commit=False)
             comment.post_id = pk
             comment.parent = parent_comment
-            send_mail('TeraVerse Comment', comment.body, comment.email, ['tyoaa51@yandex.ru'])
+            send_mail(f'TeraVerse Comment from {comment.email}', comment.body, 'tyoaa51@yandex.ru', ['tyoaa51@yandex.ru'])
             if parent_comment:
                 send_mail('TeraVerse Comment Reply', comment.body, 'tyoaa51@yandex.ru', [parent_comment.email])
             comment.save()
