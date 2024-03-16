@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'jfdlkahgjkahkiu543654g6s85d13gs35d4g65d31f5g4d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -91,8 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cd39938_tera2024',
-        'USER': 'cd39938',
-        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'USER': 'cd39938_tera2024',
+        'PASSWORD': '8Ru1DLCi',
         'HOST': 'localhost',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode = 'STRICT_TRANS_TABLES'",
@@ -136,7 +136,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [STATIC_DIR]
-STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_ROOT = BASE_DIR / 'static/root'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -146,8 +146,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# RECIPIENTS_EMAIL = ['tyoaa51@gmail.com']
-# DEFAULT_FROM_EMAIL = 'alyona51@bk.ru'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # почты для получения писем
